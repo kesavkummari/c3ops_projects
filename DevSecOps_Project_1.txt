@@ -1,0 +1,92 @@
+Capstone Project: Real-World Use Case
+
+Project Title: E-Commerce Inventory Management System
+
+Project Description:
+
+In this capstone project, students will develop an E-Commerce Inventory Management System, a Java-based web application, which will manage products, inventory, and orders for a fictional e-commerce platform. 
+The application will be built using Maven and deployed on an Apache Tomcat server. 
+
+The goal is to provide an end-to-end CI/CD pipeline that integrates code quality checks, artifact management, and automated deployments, along with application monitoring using AWS CloudWatch.
+
+Business Scenario:
+
+You are a DevOps engineer for an e-commerce company that needs an inventory management system to help keep track of products, monitor stock levels, and process orders efficiently. 
+
+The system is crucial for the business to keep operations running smoothly and to provide real-time inventory updates on the e-commerce platform. 
+
+Your task is to set up a CI/CD pipeline that ensures high-quality code, fast delivery of new features, and reliable operation of the application.
+
+Project Requirements:
+
+	1.	Java Web Application:
+	•	Develop a simple Java-based web application using Spring Boot.
+	•	The application should have basic functionalities:
+	  •	 Add new products to the inventory.
+	  •	Update stock levels.
+	  •	View product details and stock levels.
+	  •	Process orders and update inventory accordingly.
+	•	Use Maven for project management and building the application.
+	
+ 2.	Version Control:
+	  •	Use Git for version control and host the repository on GitHub.
+	
+ 3.	CI/CD Pipeline using Jenkins:
+	  •	Continuous Integration (CI):
+	  •	Set up a Jenkins pipeline to automate the build process using Maven.
+	  •	Integrate SonarQube for code quality analysis. Ensure the pipeline stops and alerts if any critical code quality issues are found.
+	  •	Continuous Deployment (CD):
+	  •	Use JFrog Artifactory to manage build artifacts. Store versioned JAR/WAR files.
+	  •	Deploy the application to an Apache Tomcat server automatically after passing all quality gates.
+	
+ 4.	SonarQube:
+	  •	Perform code quality checks using SonarQube.
+	  •	Set up a quality gate to fail the build if there are any critical bugs, code smells, or security vulnerabilities that must be addressed.
+
+5.	JFrog Artifactory:
+	  •	Store Maven build artifacts (JAR/WAR) in JFrog Artifactory.
+	  •	Manage versions and dependencies of the application artifacts.
+ 
+6.	Apache Tomcat:
+	  •	Deploy the application to Apache Tomcat automatically from the CI/CD pipeline.
+	  •	Ensure zero-downtime deployments.
+	 
+7.	AWS CloudWatch Monitoring:
+	  •	Monitor application health and performance using AWS CloudWatch.
+	  •	Set up heartbeat monitoring to ensure the application is running and responding as expected.
+	  •	Configure alarms to alert the team if the application goes down or if performance metrics cross defined thresholds.
+
+Detailed Steps:
+
+	1.	Project Setup:
+	  •	Initialize the project with Spring Boot and create a basic structure for the Inventory Management System.
+	  •	Push the project to a GitHub repository.
+	2.	Pipeline Setup in Jenkins:
+	  •	Install Jenkins and necessary plugins (Git, Maven, SonarQube Scanner, Artifactory, CloudWatch).
+	  •	Configure Jenkins to pull code from the GitHub repository.
+	  •	Write Jenkinsfile (both scripted and declarative) to define the CI/CD pipeline.
+	  •	Stages in Jenkinsfile:
+	  •	Checkout code from GitHub.
+	  •	Build the application using Maven.
+	  •	Run SonarQube analysis to check code quality.
+	  •	If SonarQube quality gate passes, upload the artifact to JFrog Artifactory.
+	  •	Deploy the application to Apache Tomcat.
+	  •	Set up AWS CloudWatch for application monitoring.
+	3.	Implementing Conditional Deployment:
+	  •	Use Jenkins conditional steps to ensure deployment to Tomcat only occurs if the code passes SonarQube checks.
+	4.	Testing and Validation:
+	  •	Test the application locally and in the deployed environment.
+	  •	Validate the pipeline by introducing deliberate code quality issues and observing how the pipeline reacts.
+	5.	Monitoring Setup:
+	  •	Configure AWS CloudWatch agent on the Tomcat server.
+	  •	Create CloudWatch dashboards to monitor application metrics like CPU usage, memory, response time, and custom heartbeat metrics.
+
+Learning Outcomes:
+
+	•	End-to-End CI/CD Pipeline: Understanding the setup and management of a complete CI/CD pipeline for a Java web application.
+	•	Code Quality and Security: Learning the importance of code quality checks and how tools like SonarQube can be integrated into CI pipelines.
+	•	Artifact Management: Using JFrog Artifactory for efficient artifact management and understanding the significance of version control in deployments.
+	•	Deployment Automation: Automating the deployment process using Jenkins and Apache Tomcat, ensuring reliable and consistent application delivery.
+	•	Monitoring and Observability: Gaining insights into application health and performance monitoring using AWS CloudWatch, setting up alarms, and maintaining system uptime.
+
+This capstone project simulates a real-world scenario that DevOps engineers often face, providing hands-on experience with tools and practices crucial for modern software development and operations.
